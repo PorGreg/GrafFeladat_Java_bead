@@ -62,7 +62,7 @@ public class Graf {
         elek.add(new El(cs2, cs1));
     }
 
-    // ezt csináltál előszőr, mikor még nem tudtam használni a halmaz sor verem adatszerkezeteket
+    // ezt csináltam előszőr, mikor még nem tudtam használni a halmaz sor verem adatszerkezeteket
     // a rendes, azokkal megoldott feladatot a halmazsorverem nevű branch-ben lehet megtalálni
     public void szelessegiBejaras(int kezdoPont) {
         List<Integer> bejartPontok = new ArrayList<>();
