@@ -82,6 +82,7 @@ public class Graf {
         }
     }
 
+    // mivel én listát használtam halmaz és sor helyett, így ugyanaz, mint a szélességi bejárás
     public void melysegiBejaras(int kezdoPont) {
         List<Integer> bejartPontok = new ArrayList<>();
         List<Integer> kovetkezoPontok = new ArrayList<>();
