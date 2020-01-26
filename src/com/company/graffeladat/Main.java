@@ -16,7 +16,7 @@ public class Main {
         graf.hozzaad(2, 4);
 
         System.out.println(graf);
-        graf.szelessegiBejaras(0);
+        graf.szelessegiBejaras(4);
         System.out.println();
         graf.melysegiBejaras(3);
         System.out.println();

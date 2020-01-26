@@ -1,10 +1,7 @@
 package com.company.graffeladat;
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 /**
  * Irányítatlan, egyszeres gráf.
@@ -63,14 +60,14 @@ public class Graf {
     }
 
     public void szelessegiBejaras(int kezdoPont) {
-        List<Integer> bejartPontok = new ArrayList<>();
-        List<Integer> kovetkezoPontok = new ArrayList<>();
+        Set<Integer> bejartPontok = new HashSet<>();
+        Queue<Integer> kovetkezoPontok = new ArrayDeque<>();
 
         kovetkezoPontok.add(kezdoPont);
         bejartPontok.add(kezdoPont);
 
         for (int i = 0; i < kovetkezoPontok.size(); i++) {
-            int k = kovetkezoPontok.get(i);
+            int k = kovetkezoPontok.remove();
             System.out.print(k);
 
             for (El el : this.elek) {
@@ -83,14 +80,14 @@ public class Graf {
     }
 
     public void melysegiBejaras(int kezdoPont) {
-        List<Integer> bejartPontok = new ArrayList<>();
-        List<Integer> kovetkezoPontok = new ArrayList<>();
+        Set<Integer> bejartPontok = new HashSet<>();
+        Deque<Integer> kovetkezoPontok = new ArrayDeque<>();
 
         kovetkezoPontok.add(kezdoPont);
         bejartPontok.add(kezdoPont);
 
         for (int i = 0; i < kovetkezoPontok.size(); i++) {
-            int k = kovetkezoPontok.get(i);
+            int k = kovetkezoPontok.remove();
             System.out.print(k);
 
             for (El el : this.elek) {
@@ -103,14 +100,14 @@ public class Graf {
     }
 
     public boolean osszefuggo(int kezdoPont) {
-        List<Integer> bejartPontok = new ArrayList<>();
-        List<Integer> kovetkezoPontok = new ArrayList<>();
+        Set<Integer> bejartPontok = new HashSet<>();
+        Queue<Integer> kovetkezoPontok = new ArrayDeque<>();
 
         kovetkezoPontok.add(kezdoPont);
         bejartPontok.add(kezdoPont);
 
         for (int i = 0; i < kovetkezoPontok.size(); i++) {
-            int k = kovetkezoPontok.get(i);
+            int k = kovetkezoPontok.remove();
 
             for (El el : this.elek) {
                 if (el.getCsucs1() == k && !bejartPontok.contains(el.getCsucs2())) {
@@ -129,14 +126,14 @@ public class Graf {
     public Graf feszitoFa(int kezdoPont) {
         Graf fa = new Graf(this.csucsokSzama);
 
-        List<Integer> bejartPontok = new ArrayList<>();
-        List<Integer> kovetkezoPontok = new ArrayList<>();
+        Set<Integer> bejartPontok = new HashSet<>();
+        Queue<Integer> kovetkezoPontok = new ArrayDeque<>();
 
         kovetkezoPontok.add(kezdoPont);
         bejartPontok.add(kezdoPont);
 
         for (int i = 0; i < kovetkezoPontok.size(); i++) {
-            int k = kovetkezoPontok.get(i);
+            int k = kovetkezoPontok.remove();
 
             for (El el : this.elek) {
                 if (el.getCsucs1() == k && !bejartPontok.contains(el.getCsucs2())) {
