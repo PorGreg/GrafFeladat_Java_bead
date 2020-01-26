@@ -1,4 +1,7 @@
 package com.company.graffeladat;
+/*
+ * @author Pór Gergő
+ */
 
 public class Main {
     public static void main(String[] args) {
@@ -13,5 +16,14 @@ public class Main {
         graf.hozzaad(2, 4);
 
         System.out.println(graf);
+        graf.szelessegiBejaras(0);
+        System.out.println();
+        graf.melysegiBejaras(3);
+        System.out.println();
+        System.out.println(graf.osszefuggo(5));
+        System.out.println();
+        System.out.println(graf.feszitoFa(1));
+        System.out.println();
+        System.out.println(graf.mohoSzinezes());
     }
 }
